@@ -1,0 +1,12 @@
+<h1>Actors</h1>
+
+<button><%= link_to "New", new_actor_path  %></button>
+
+<% @actors.each do |actor| %>
+  <h3>Id: <%= actor.id %></h3>
+  <p>First name: <%= actor.first_name %></p>
+  <p>Last name: <%= actor.last_name %></p>
+  <br>
+  <%= link_to 'Delete', actor_path(actor), method: :delete, data: { confirm: 'Are you sure you want to delete this actor?' } %>
+  <%= link_to 'Edit', edit_actor_path(actor) %>
+<% end %>
